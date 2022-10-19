@@ -1,2 +1,2 @@
-# Proytecto_final
-Este es el proyecto final del curso de Python realizado en Coderhouse
+# Mi_primer_MVT
+Este es mi primer MVT realizado en Python
