@@ -22,6 +22,7 @@ urlpatterns = [
     path('saludar/', index),
     path('mostrar-notas/', index_1),
     path('mi-familia/', monstrar_familiares),
+    path('imc/<int:peso>/<int:altura>/', imc),
     path('mi-familia/buscar', BuscarFamiliar.as_view()),
     path('mi-familia/alta', AltaFamiliar.as_view()),
 ]
