@@ -2,6 +2,7 @@ from django.shortcuts import render
 from ejemplo.models import Familiar
 from ejemplo.forms import Buscar, FamiliarForm 
 from django.views import View 
+from django.views.generic import ListView, CreateView
 
 def index(request):
     return render(request, "ejemplo/saludar.html", 
@@ -61,3 +62,11 @@ class AltaFamiliar(View):
                                                         'msg_exito': msg_exito})
         
         return render(request, self.template_name, {"form": form})
+
+class FamiliarList(ListView):
+  model = Familiar
+
+class FamiliarCrear(CreateView):
+  model = Familiar
+  success_url = "/panel-familia"
+  fields = ["nombre", "direccion", "numero_pasaporte"]
