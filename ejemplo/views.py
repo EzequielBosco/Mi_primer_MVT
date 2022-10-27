@@ -55,7 +55,7 @@ class AltaFamiliar(View):
         form = self.form_class(request.POST)
         if form.is_valid():
             form.save()
-            msg_exito = f"se cargo con éxito el familiar {form.cleaned_data.get('nombre')}"
+            msg_exito = f"Se cargó con éxito el familiar {form.cleaned_data.get('nombre')}"
             form = self.form_class(initial=self.initial)
             return render(request, self.template_name, {'form':form, 
                                                         'msg_exito': msg_exito})
