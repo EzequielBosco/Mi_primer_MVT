@@ -3,6 +3,18 @@ from ejemplo.models import Familiar
 from ejemplo.forms import Buscar, FamiliarForm
 from django.views import View 
 
+def Home(request):
+    return render(request, "ejemplo/home.html")
+
+def About(request):
+    return render(request, "ejemplo/about.html")
+
+def Contact(request):
+    return render(request, "ejemplo/contact.html")
+
+def Post(request):
+    return render(request, "ejemplo/post.html")
+
 def index(request):
     return render(request, "ejemplo/saludar.html", 
     {
