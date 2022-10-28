@@ -19,7 +19,6 @@ from ejemplo.views import index, index_1, monstrar_familiares, BuscarFamiliar, A
 from blog.views import index_0
 
 urlpatterns = [
-    path('', Home),
     path('home/', Home),
     path('post/', Post),
     path('about/', About),
