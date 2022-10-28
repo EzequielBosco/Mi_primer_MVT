@@ -14,8 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from ejemplo.views import index, index_1, monstrar_familiares, BuscarFamiliar, AltaFamiliar, FamiliarList, FamiliarCrear, FamiliarBorrar, FamiliarActualizar
+from django.urls import path, include
+from ejemplo.views import index, index_1, monstrar_familiares, BuscarFamiliar, AltaFamiliar
 from blog.views import index_0
 
 urlpatterns = [
@@ -26,8 +26,5 @@ urlpatterns = [
     path('mi-familia/', monstrar_familiares),
     path('mi-familia/buscar', BuscarFamiliar.as_view()),
     path('mi-familia/alta', AltaFamiliar.as_view()),
-    path('panel-familia/', FamiliarList.as_view(), name="familiar-list"),
-    path('panel-familia/crear', FamiliarCrear.as_view(), name="familiar-crear"),
-    path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view(), name="familiar-borrar"),
-    path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view(), name="familiar-actualizar"),
+    path('panel-familia/', include('panel_familia.urls')),
 ]
